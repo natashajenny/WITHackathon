@@ -1,4 +1,3 @@
-
 function ViewModel() {
 	var self = this;
 
@@ -16,7 +15,7 @@ function ViewModel() {
 		{"Name": 'Ryan', "Id": 'flash', "color": 'black'},
 		{"Name": 'Ryan', "Id": 'flash', "color": 'white'},
 		{"Name": 'Ryan', "Id": 'flash', "color": 'black'}],
-		
+
 		[{"Name": 'Ryan', "Id": 'flash', "color": 'black'},
 		{"Name": 'Ryan', "Id": 'flash', "color": 'white'},
 		{"Name": 'Ryan', "Id": 'flash', "color": 'black'},
