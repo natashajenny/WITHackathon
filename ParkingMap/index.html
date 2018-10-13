@@ -33,19 +33,20 @@
 
 		<!-- Floorplan Component -->
 
-		<table id = "tbl" style="height: 350px; width: 600px; background-color: white" hidden >
-				<tbody data-bind="foreach: items_grouped">
-					<tr data-bind="foreach: $data">
-						<td data-bind="style: { backgroundColor: color }"></td>
-					</tr>
-				</tbody>
-			</table>
+		<!-- <table id = "tbl" style="height: 350px; width: 600px; background-color: white" hidden >
+			<tbody data-bind="foreach: items_grouped">
+				<tr data-bind="foreach: $data">
+					<td data-bind="style: { backgroundColor: color }"></td>
+				</tr>
+			</tbody>
+		</table> -->
+		<img id="floorplan" src="../media/Level1.png" style="height: 450px; width: 600px"/>
 		<br />
 		<br />
 
 	<!-- Floors Selection Component -->
 	<div class="floors-flexbox" data-bind="foreach: allFloors">
-		<button style="width: 300px" id="thisButton"+floor" class="btn btn-secondary-floors-flexitem" type="button" data-bind="click: function(data, event) {goToFloor(floor, available, data, event) }">
+		<button style="width: 300px" class="btn btn-secondary-floors-flexitem" type="button" data-bind="click: function(data, event) {goToFloor(floor, available, data, event) }, attr: {'id': 'thisButton' + floor}">
 			<div>Floor <span data-bind="text: floor"/></div>
 			<span data-bind="text: available"></span>/<span data-bind="text: capacity"></span>
 		</button>
@@ -58,11 +59,12 @@
 	<script type='text/javascript' src='viewModel.js'></script>
 	<script>
 		function goToFloor(floorNum, availableSpots) {
-			console.log("hellooo")
-			document.getElementById("tbl").removeAttribute("hidden");
+			// console.log("hellooo")
+			// document.getElementById("tbl").removeAttribute("hidden");
 			document.getElementById("levelNumber").innerHTML = "Level " + floorNum;
 			document.getElementById("availspots").innerHTML = availableSpots + " Available Spots";
-			document.getElementById("thisButton"+floor).style.background="rgba(106,106,106,0.75)";
+			document.getElementById("thisButton"+floorNum).style.background="rgba(106,106,106,0.75)";
+			document.getElementById("floorplan").src = "../media/Level" + floorNum + ".png"
 		}
 	</script>
 </body>
