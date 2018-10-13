@@ -15,7 +15,17 @@ function ViewModel() {
 			grouped.push(row);
         }
         return grouped;
-    });
+	});
+	self.parkingText = ko.observable("Welcome to Macquarie Centre!");
+	self.nextParkingText = "Scanned J3NNY. Allocating your space...";
+	
+	self.enterCar = function() {
+		if (self.nextParkingText === "Welcome! You've been allocated Level 1 R2.") {
+			self.items([]);
+		}
+		self.parkingText(self.nextParkingText);
+		self.nextParkingText = "Welcome! You've been allocated Level 1 R2.";
+	};
 }
 
 ko.applyBindings(new ViewModel())
