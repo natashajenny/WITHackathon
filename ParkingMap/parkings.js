@@ -9,7 +9,7 @@ function generateBlankMap() {
 		var row = []
 		for (var j = 0; j < parkingSize.height; j++) {
 			var col = {
-				"color": "white"
+				"color": "grey"
 			}
 			row.push(col)
 		}
@@ -30,7 +30,7 @@ function addParkingLots(parkingMap) {
 					for (var j = 0; j < 4; j++) {
 						var x = xs[a] + i
 						var y = ys[b] + j
-						parkingMap[y][x]["color"] = "green"
+						parkingMap[x][y]["color"] = "green"
 					}
 				} 
 			} else {
@@ -38,7 +38,7 @@ function addParkingLots(parkingMap) {
 					for (var j = 0; j < 4; j++) {
 						var x = xs[a] + i
 						var y = ys[b] + j						
-						parkingMap[y][x]["color"] = "red"
+						parkingMap[x][y]["color"] = "red"
 					}
 				}
 			}
@@ -77,14 +77,14 @@ function addWalls(parkingMap) {
 	parkingMap = addWallBlock(parkingMap, 30, 13, 30, 21)
 	parkingMap = addWallBlock(parkingMap, 34, 13, 34, 21)
 
-	parkingMap = addWallBlock(parkingMap, 5, 31, 5, 34)
-	parkingMap = addWallBlock(parkingMap, 9, 31, 9, 34)
-	parkingMap = addWallBlock(parkingMap, 13, 31, 13, 34)
-	parkingMap = addWallBlock(parkingMap, 17, 31, 17, 34)
-	parkingMap = addWallBlock(parkingMap, 22, 31, 22, 34)
-	parkingMap = addWallBlock(parkingMap, 26, 31, 26, 34)
-	parkingMap = addWallBlock(parkingMap, 30, 31, 30, 34)
-	parkingMap = addWallBlock(parkingMap, 34, 31, 34, 34)
+	parkingMap = addWallBlock(parkingMap, 5, 30, 5, 34)
+	parkingMap = addWallBlock(parkingMap, 9, 30, 9, 34)
+	parkingMap = addWallBlock(parkingMap, 13, 30, 13, 34)
+	parkingMap = addWallBlock(parkingMap, 17, 30, 17, 34)
+	parkingMap = addWallBlock(parkingMap, 22, 30, 22, 34)
+	parkingMap = addWallBlock(parkingMap, 26, 30, 26, 34)
+	parkingMap = addWallBlock(parkingMap, 30, 30, 30, 34)
+	parkingMap = addWallBlock(parkingMap, 34, 30, 34, 34)
 
 	parkingMap = addWallBlock(parkingMap, 0, 4, 0, 30)
 	parkingMap = addWallBlock(parkingMap, 42, 4, 42, 6)
