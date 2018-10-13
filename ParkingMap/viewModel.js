@@ -1,28 +1,9 @@
-
 function ViewModel() {
 	var self = this;
 
 	self.floors = ko.observableArray(allFloors)
 
-    self.items = ko.observableArray([
-		[{"Name": 'Ryan', "Id": 'flash'},
-		{"Name": 'Ryan', "Id": 'flash'},
-		{"Name": 'Ryan', "Id": 'flash'},
-		{"Name": 'Ryan', "Id": 'flash'},
-		{"Name": 'Ryan', "Id": 'flash'}],
-
-		[{"Name": 'Ryan', "Id": 'flash'},
-		{"Name": 'Ryan', "Id": 'flash'},
-		{"Name": 'Ryan', "Id": 'flash'},
-		{"Name": 'Ryan', "Id": 'flash'},
-		{"Name": 'Ryan', "Id": 'flash'}],
-
-		[{"Name": 'Ryan', "Id": 'flash'},
-		{"Name": 'Ryan', "Id": 'flash'},
-		{"Name": 'Ryan', "Id": 'flash'},
-		{"Name": 'Ryan', "Id": 'flash'},
-		{"Name": 'Ryan', "Id": 'flash'}]
-	]);
+    self.items = ko.observableArray(parkingMap);
     self.items_grouped = ko.computed(function(){
         var grouped = [];
         var itemlist = self.items();

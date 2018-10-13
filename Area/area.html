@@ -9,23 +9,22 @@
     crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 <div id="content">
-    <a href="http://ryan.com">
+    <a href="../ParkingMap/index.html">
         <img src="../media/yellowcircle.jpg" style="height: 25px; width: 25px">
         <b>Macquare Centre</b><br>
         35 / 200 spots
 </div>
 </a>
 <div id="content2">
-    <a href="http://ryan.com">
+    <a href="../ParkingMap/index.html">
         <img src="../media/cirlce.png" style="height: 25px; width: 25px">
         <b>Top Ryde Sydney</b><br>
         350 / 400 spots
     </a>
 </div>
 
-
 <div id="content3">
-    <a href="http://ryan.com">
+    <a href="../ParkingMap/index.html">
         <img src="../media/yellowcircle.jpg" style="height: 25px; width: 25px">
         <b>Coxs Road Mall</b><br>
         10 / 50 spots
@@ -35,63 +34,13 @@
 <body style="background-color: #3498db">
     <nav class="navbar navbar-expand-lg navbar-light " style="color: white; background: linear-gradient(#2c3e50, #3498db);"
         style="text-align: center;">
+        <button class="btn btn-primary" type="button" onclick="window.location.href='../main_page/index.html'">
+            BACK
+        </button>
         <a class="navbar-brand" style="text-align: center; margin: auto; font-family: 'Raleway', sans-serif; font-size: 35px">ParkSmart</a>
 
-
-        <!--
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    -->
     </nav>
     <div id="googleMap" style="width:100%;height:90%;"></div>
-    <!--<table width='100%'>
-    <thead>
-        <tr>
-            <th width='25%'>Category</th>
-            <th width='25%'>Product</th>
-            <th class='price' width='15%'>Price</th>
-            <th class='quantity' width='10%'>Quantity</th>
-            <th class='price' width='15%'>Subtotal</th>
-            <th width='10%'> </th>
-        </tr>
-    </thead>
-    <tbody data-bind='foreach: lines'>
-        <tr>
-            <td>
-                <select data-bind='options: sampleProductCategories, optionsText: "name", optionsCaption: "Select...", value: category'> </select>
-            </td>
-            <td data-bind="with: category">
-                <select data-bind='options: products, optionsText: "name", optionsCaption: "Select...", value: $parent.product'> </select>
-            </td>
-            <td class='price' data-bind='with: product'>
-                <span data-bind='text: formatCurrency(price)'> </span>
-            </td>
-            <td class='quantity'>
-                <input data-bind='visible: product, value: quantity, valueUpdate: "afterkeydown"' />
-            </td>
-            <td class='price'>
-                <span data-bind='visible: product, text: formatCurrency(subtotal())' > </span>
-            </td>
-            <td>
-                <a href='#' data-bind='click: $parent.removeLine'>Remove</a>
-            </td>
-        </tr>
-    </tbody>
-</table>
-<p class='grandTotal'>
-    Total value: <span data-bind='text: formatCurrency(grandTotal())'> </span>
-</p>
-<button data-bind='click: addLine'>Add product</button>
-<button data-bind='click: save'>Submit order</button>
-
-
-
-<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js'></script>
-<script type='text/javascript' src='cars.js'></script>
-<script type='text/javascript' src='area.js'></script>
--->
     <style>
         /* Always set the map height explicitly to define the size of the div
          * element that contains the map. */

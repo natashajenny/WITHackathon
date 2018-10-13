@@ -16,17 +16,17 @@
 </head>
 <body>
 	<!-- Navigation and Headings Component -->
-	<nav class="navbar navbar-expand-lg navbar-light " style="color: white; background: linear-gradient(#2c3e50, #3498db);"
+	<nav data-bind="click: enterCar" class="navbar navbar-expand-lg navbar-light " style="color: white; background: linear-gradient(#2c3e50, #3498db);"
 	style="text-align: center;">
-	<button class="btn btn-primary" type="button" onclick="window.location.href='../Area/area.html'">
-		BACK
-	</button>
-	<a class="navbar-brand" style="text-align: center; margin: auto; font-family: 'Raleway', sans-serif; font-size: 35px">Macquarie Centre</a>
+	<!-- ko if: $data.parkingText() === "Scanned J3NNY. Allocating your space..." -->
+	<img style="height: 50px; width: 50px; " src="../media/spin.gif">
+	<!-- /ko -->
+	<a class="navbar-brand" data-bind="text: parkingText" style="text-align: center; margin: auto; font-family: 'Raleway', sans-serif; font-size: 35px">You have been allocated Level 1 Row 2</a>
 
 </nav>
+
 	<div class="content">
 		<!-- Floorplan Component -->
-
 		<table style="height: 350px; width: 1000px; background-color: white">
 				<tbody data-bind="foreach: items_grouped">
 					<tr data-bind="foreach: $data">
@@ -37,25 +37,10 @@
 		<br />
 		<br />
 
-	<!-- Floors Selection Component -->
-	<div class="floors-flexbox" data-bind="foreach: allFloors">
-		<button id="thisButton"+floor" class="btn btn-secondary-floors-flexitem" type="button" data-bind="click: function(data, event) {goToFloor(floor, available, data, event) }">
-			<div>F<span data-bind="text: floor"/></div>
-			<span data-bind="text: available"></span>/<span data-bind="text: capacity"></span>
-		</button>
+		<!-- Scripts -->
+		<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js'></script>
+		<script type='text/javascript' src='floors.js'></script>
+		<script type='text/javascript' src='viewModel.js'></script>
 	</div>
-
-	<!-- Scripts -->
-	<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js'></script>
-	<script type='text/javascript' src='floors.js'></script>
-	<script type='text/javascript' src='viewModel.js'></script>
-	<script>
-		function goToFloor(floorNum, availableSpots) {
-			console.log("hellooo")
-			document.getElementById("levelNumber").innerHTML = "Level " + floorNum;
-			document.getElementById("availspots").innerHTML = availableSpots + " Available Spots";
-			document.getElementById("thisButton"+floor).style.background="rgba(106,106,106,0.75)";
-		}
-	</script>
 </body>
 </html>	

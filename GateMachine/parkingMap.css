@@ -1,5 +1,5 @@
 body {
-	background: url("../media/map_dark.jpg");
+	background-color: #3498db;
 	background-size: cover;
 	background-position: center center;
 }
@@ -20,11 +20,11 @@ body {
 .floors-flexbox {
 	display: flex;
 	flex-direction: row;
+	justify-content: space-between;
 }
 
-.btn-secondary-floors-flexitem {
-	background-color: rgba(255,255,255,0.6);
-	width: 10%;
-	padding: 0px 0px 0px 0px;
-	text-align: center;
+.floors-flexitem {
+	background-color: rgba(255,255,255,0.9);
+	width: 20%;
+	padding: 0px 15px 0px 15px;
 }
