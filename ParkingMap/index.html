@@ -40,12 +40,14 @@
 
 	<!-- Floors Selection Component -->
 	<div class="floors-flexbox" data-bind="foreach: allFloors">
-		<button style="width: 300px" class="btn btn-secondary-floors-flexitem" type="button" data-bind="click: function(data, event) {goToFloor(floor, available, imgSrc, data, event) }, attr: {'id': 'thisButton' + floor}">
+		<button style="width: 300px" class="btn  btn-light btn-secondary-floors-flexitem" type="button" data-bind="click: function(data, event) {goToFloor(floor, available, imgSrc, data, event) }, attr: {'id': 'thisButton' + floor}">
 			<div>
 				Floor 
 				<span data-bind="text: floor"/>
 			</div>
-			<span data-bind="text: available"></span>/<span data-bind="text: capacity"></span>
+			<span data-bind="text: available"></span>
+			/
+			<span data-bind="text: capacity"></span>
 		</button>
 	</div>
 
@@ -60,7 +62,16 @@
 			document.getElementById("img").removeAttribute("hidden");
 			document.getElementById("levelNumber").innerHTML = "Level " + floorNum;
 			document.getElementById("availspots").innerHTML = availableSpots + " Available Spots";
+			document.getElementById("thisButton1").style.background="white";
+			document.getElementById("thisButton2").style.background="white";
+			document.getElementById("thisButton3").style.background="white";
+			document.getElementById("thisButton4").style.background="white";
+			document.getElementById("thisButton1").style.color="black";
+			document.getElementById("thisButton2").style.color="black";
+			document.getElementById("thisButton3").style.color="black";
+			document.getElementById("thisButton4").style.color="black";
 			document.getElementById("thisButton"+floorNum).style.background="rgba(106,106,106,0.75)";
+			document.getElementById("thisButton"+floorNum).style.color="white";
 		}
 	</script>
 </body>
