@@ -25,9 +25,15 @@
 
 </nav>
 	<div class="content">
+
+		<h1 style="color: white">
+		<div id="levelNumber">Select a floor</div>
+		<div id="availspots"></div>
+		</h1>
+
 		<!-- Floorplan Component -->
 
-		<table style="height: 350px; width: 600px; background-color: white">
+		<table id = "tbl" style="height: 350px; width: 600px; background-color: white" hidden >
 				<tbody data-bind="foreach: items_grouped">
 					<tr data-bind="foreach: $data">
 						<td data-bind="style: { backgroundColor: color }"></td>
@@ -39,8 +45,8 @@
 
 	<!-- Floors Selection Component -->
 	<div class="floors-flexbox" data-bind="foreach: allFloors">
-		<button id="thisButton"+floor" class="btn btn-secondary-floors-flexitem" type="button" data-bind="click: function(data, event) {goToFloor(floor, available, data, event) }">
-			<div>F<span data-bind="text: floor"/></div>
+		<button style="width: 300px" id="thisButton"+floor" class="btn btn-secondary-floors-flexitem" type="button" data-bind="click: function(data, event) {goToFloor(floor, available, data, event) }">
+			<div>Floor <span data-bind="text: floor"/></div>
 			<span data-bind="text: available"></span>/<span data-bind="text: capacity"></span>
 		</button>
 	</div>
@@ -53,6 +59,7 @@
 	<script>
 		function goToFloor(floorNum, availableSpots) {
 			console.log("hellooo")
+			document.getElementById("tbl").removeAttribute("hidden");
 			document.getElementById("levelNumber").innerHTML = "Level " + floorNum;
 			document.getElementById("availspots").innerHTML = availableSpots + " Available Spots";
 			document.getElementById("thisButton"+floor).style.background="rgba(106,106,106,0.75)";
