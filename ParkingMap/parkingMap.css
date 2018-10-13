@@ -1,8 +1,15 @@
 body {
-	padding: 30px;
-	background: url("../media/background.jpg");
+	background: url("../media/map_dark.jpg");
 	background-size: cover;
 	background-position: center center;
+}
+
+.navbar-color {
+	background-color: #f9293a;
+}
+
+.content {
+	padding: 30px;
 }
 
 .title {
@@ -15,7 +22,6 @@ body {
 	flex-direction: row;
 	justify-content: space-between;
 }
-
 
 .floors-flexitem {
 	background-color: rgba(255,255,255,0.9);

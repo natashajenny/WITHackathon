@@ -5,23 +5,23 @@ function ViewModel() {
 	self.floors = ko.observableArray(allFloors)
 
     self.items = ko.observableArray([
-		[{"Name": 'Ryan', "Id": 'flash'},
-		{"Name": 'Ryan', "Id": 'flash'},
-		{"Name": 'Ryan', "Id": 'flash'},
-		{"Name": 'Ryan', "Id": 'flash'},
-		{"Name": 'Ryan', "Id": 'flash'}],
+		[{"Name": 'Ryan', "Id": 'flash', "color": 'black'},
+		{"Name": 'Ryan', "Id": 'flash', "color": 'white'},
+		{"Name": 'Ryan', "Id": 'flash', "color": 'black'},
+		{"Name": 'Ryan', "Id": 'flash', "color": 'white'},
+		{"Name": 'Ryan', "Id": 'flash', "color": 'black'}],
 
-		[{"Name": 'Ryan', "Id": 'flash'},
-		{"Name": 'Ryan', "Id": 'flash'},
-		{"Name": 'Ryan', "Id": 'flash'},
-		{"Name": 'Ryan', "Id": 'flash'},
-		{"Name": 'Ryan', "Id": 'flash'}],
-
-		[{"Name": 'Ryan', "Id": 'flash'},
-		{"Name": 'Ryan', "Id": 'flash'},
-		{"Name": 'Ryan', "Id": 'flash'},
-		{"Name": 'Ryan', "Id": 'flash'},
-		{"Name": 'Ryan', "Id": 'flash'}]
+		[{"Name": 'Ryan', "Id": 'flash', "color": 'black'},
+		{"Name": 'Ryan', "Id": 'flash', "color": 'white'},
+		{"Name": 'Ryan', "Id": 'flash', "color": 'black'},
+		{"Name": 'Ryan', "Id": 'flash', "color": 'white'},
+		{"Name": 'Ryan', "Id": 'flash', "color": 'black'}],
+		
+		[{"Name": 'Ryan', "Id": 'flash', "color": 'black'},
+		{"Name": 'Ryan', "Id": 'flash', "color": 'white'},
+		{"Name": 'Ryan', "Id": 'flash', "color": 'black'},
+		{"Name": 'Ryan', "Id": 'flash', "color": 'white'},
+		{"Name": 'Ryan', "Id": 'flash', "color": 'black'}],
 	]);
     self.items_grouped = ko.computed(function(){
         var grouped = [];

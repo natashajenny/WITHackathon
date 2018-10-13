@@ -16,47 +16,42 @@
 </head>
 <body>
 	<!-- Navigation and Headings Component -->
-	<div class="row">
-		<div class="col-md-1">
-	    	<button class="btn btn-primary" type="button">
-	    		BACK
-	    	</button>
-	    </div>
-	    <div class="col-md-4 title">
-			<h1>Level 1</h1>
+	<nav class="navbar navbar-dark navbar-color">
+    	<button class="btn btn-primary" type="button" onclick="window.location.href='../Area/area.html'">
+    		BACK
+    	</button>
+		<h2 class="title">Macquerie Building - 1st Floor</h2>
+		<h2 class="title">200</h2>
+	</nav>
+	<div class="content">
+		<!-- Floorplan Component -->
+
+		<table border="1" style="height: 350px; width: 1000px; background-color: white">
+				<tbody data-bind="foreach: items_grouped">
+					<tr data-bind="foreach: $data">
+						<td data-bind="style: { backgroundColor: color }">
+							<span data-bind="text: Name"></span>
+							<span data-bind="text: Id"></span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		<br />
+		<br />
+
+		<!-- Floors Selection Component -->
+		<div class="floors-flexbox" data-bind="foreach: allFloors">
+			<div class="floors-flexitem">
+				<p>Floor: <span data-bind="text: floor"/></p>
+				<p>Capacity: <span data-bind="text: capacity"/></p>
+				<p>Available: <span data-bind="text: available"/></p>
+			</div>
 		</div>
-	    <div class="col-md-4 title">
-			<h2>200 Available Spots</h2>
-		</div>
+
+		<!-- Scripts -->
+		<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js'></script>
+		<script type='text/javascript' src='floors.js'></script>
+		<script type='text/javascript' src='viewModel.js'></script>
 	</div>
-
-	<!-- Floorplan Component -->
-
-	<table border="1" style="height: 350px; width: 1000px; background-color: white">
-			<tbody data-bind="foreach: items_grouped">
-				<tr data-bind="foreach: $data">
-					<td>
-						<span data-bind="text: Name"></span>
-						<span data-bind="text: Id"></span>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-	<br />
-	<br />
-
-	<!-- Floors Selection Component -->
-	<div class="floors-flexbox" data-bind="foreach: allFloors">
-		<div class="floors-flexitem">
-			<p>Floor: <span data-bind="text: floor"/></p>
-			<p>Capacity: <span data-bind="text: capacity"/></p>
-			<p>Available: <span data-bind="text: available"/></p>
-		</div>
-	</div>
-
-	<!-- Scripts -->
-	<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js'></script>
-	<script type='text/javascript' src='floors.js'></script>
-	<script type='text/javascript' src='viewModel.js'></script>
 </body>
 </html>	
