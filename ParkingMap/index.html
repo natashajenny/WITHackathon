@@ -23,10 +23,10 @@
 	    	</button>
 	    </div>
 	    <div class="col-md-4 title">
-			<h1>Level 1</h1>
+			<h1 id="levelNumber">Level 1</h1>
 		</div>
 	    <div class="col-md-4 title">
-			<h2>200 Available Spots</h2>
+			<h2 id="availspots">5 Available Spots</h2>
 		</div>
 	</div>
 
@@ -47,16 +47,23 @@
 
 	<!-- Floors Selection Component -->
 	<div class="floors-flexbox" data-bind="foreach: allFloors">
-		<div class="floors-flexitem">
-			<p>Floor: <span data-bind="text: floor"/></p>
-			<p>Capacity: <span data-bind="text: capacity"/></p>
-			<p>Available: <span data-bind="text: available"/></p>
-		</div>
+		<button id="thisButton"+floor" class="btn btn-secondary-floors-flexitem" type="button" data-bind="click: function(data, event) {goToFloor(floor, available, data, event) }">
+			<div>F<span data-bind="text: floor"/></div>
+			<span data-bind="text: available"></span>/<span data-bind="text: capacity"></span>
+		</button>
 	</div>
 
 	<!-- Scripts -->
 	<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js'></script>
 	<script type='text/javascript' src='floors.js'></script>
 	<script type='text/javascript' src='viewModel.js'></script>
+	<script>
+		function goToFloor(floorNum, availableSpots) {
+			console.log("hellooo")
+			document.getElementById("levelNumber").innerHTML = "Level " + floorNum;
+			document.getElementById("availspots").innerHTML = availableSpots + " Available Spots";
+			document.getElementById("thisButton"+floor).style.background="rgba(106,106,106,0.75)";
+		}
+	</script>
 </body>
 </html>	
