@@ -31,7 +31,17 @@
 	</div>
 
 	<!-- Floorplan Component -->
-	<img src="../media/building1_floor1.jpg" />
+
+	<table border="1" style="height: 350px; width: 1000px; background-color: white">
+			<tbody data-bind="foreach: items_grouped">
+				<tr data-bind="foreach: $data">
+					<td>
+						<span data-bind="text: Name"></span>
+						<span data-bind="text: Id"></span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
 	<br />
 	<br />
 
