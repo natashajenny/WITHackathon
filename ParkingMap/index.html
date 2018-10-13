@@ -16,7 +16,7 @@
 </head>
 <body>
 	<!-- Navigation and Headings Component -->
-	<nav class="navbar navbar-expand-lg navbar-light " style="color: white; background: linear-gradient(#2c3e50, #3498db);"
+	<nav class="navbar navbar-expand-lg navbar-light " style="color: white; background: linear-gradient(0deg, green, black 40%);"
 	style="text-align: center;">
 	<button class="btn btn-primary" type="button" onclick="window.location.href='../Area/area.html'">
 		BACK
@@ -33,21 +33,17 @@
 
 		<!-- Floorplan Component -->
 
-		<!-- <table id = "tbl" style="height: 350px; width: 600px; background-color: white" hidden >
-			<tbody data-bind="foreach: items_grouped">
-				<tr data-bind="foreach: $data">
-					<td data-bind="style: { backgroundColor: color }"></td>
-				</tr>
-			</tbody>
-		</table> -->
-		<img id="floorplan" src="../media/Level1.png" style="height: 450px; width: 600px"/>
+		<img id="img" src="" style="height: 450px; width: 450px" hidden/>
 		<br />
 		<br />
 
 	<!-- Floors Selection Component -->
 	<div class="floors-flexbox" data-bind="foreach: allFloors">
-		<button style="width: 300px" class="btn btn-secondary-floors-flexitem" type="button" data-bind="click: function(data, event) {goToFloor(floor, available, data, event) }, attr: {'id': 'thisButton' + floor}">
-			<div>Floor <span data-bind="text: floor"/></div>
+		<button style="width: 300px" class="btn btn-secondary-floors-flexitem" type="button" data-bind="click: function(data, event) {goToFloor(floor, available, imgSrc, data, event) }, attr: {'id': 'thisButton' + floor}">
+			<div>
+				Floor 
+				<span data-bind="text: floor"/>
+			</div>
 			<span data-bind="text: available"></span>/<span data-bind="text: capacity"></span>
 		</button>
 	</div>
@@ -58,13 +54,12 @@
 	<script type='text/javascript' src='parkings.js'></script>
 	<script type='text/javascript' src='viewModel.js'></script>
 	<script>
-		function goToFloor(floorNum, availableSpots) {
-			// console.log("hellooo")
-			// document.getElementById("tbl").removeAttribute("hidden");
+		function goToFloor(floorNum, availableSpots,imgSrc) {
+			document.getElementById("img").setAttribute("src", imgSrc); 
+			document.getElementById("img").removeAttribute("hidden");
 			document.getElementById("levelNumber").innerHTML = "Level " + floorNum;
 			document.getElementById("availspots").innerHTML = availableSpots + " Available Spots";
 			document.getElementById("thisButton"+floorNum).style.background="rgba(106,106,106,0.75)";
-			document.getElementById("floorplan").src = "../media/Level" + floorNum + ".png"
 		}
 	</script>
 </body>

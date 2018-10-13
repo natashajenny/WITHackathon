@@ -16,7 +16,7 @@
 </head>
 <body>
 	<!-- Navigation and Headings Component -->
-	<nav data-bind="click: enterCar" class="navbar navbar-expand-lg navbar-light " style="color: white; background: linear-gradient(#2c3e50, #3498db);"
+	<nav data-bind="click: enterCar" class="navbar navbar-expand-lg navbar-light " style="color: white; background: linear-gradient(0deg, green, black 40%);"
 	style="text-align: center;">
 	<!-- ko if: $data.parkingText() === "Scanned J3NNY. Allocating your space..." -->
 	<img style="height: 50px; width: 50px; " src="../media/spin.gif">
@@ -27,13 +27,7 @@
 
 	<div class="content">
 		<!-- Floorplan Component -->
-		<table style="height: 350px; width: 1000px; background-color: white">
-				<tbody data-bind="foreach: items_grouped">
-					<tr data-bind="foreach: $data">
-						<td data-bind="style: { backgroundColor: color }"></td>
-					</tr>
-				</tbody>
-			</table>
+		<img data-bind="attr:{src: imagePath}" />
 		<br />
 		<br />
 
