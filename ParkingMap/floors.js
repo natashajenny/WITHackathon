@@ -2,7 +2,7 @@ var allFloors = [
 		{
 			"floor": 1,
 			"capacity": 50,
-			"available": 5,
+			"available": 8,
 		},
 		{
 			"floor": 2,
