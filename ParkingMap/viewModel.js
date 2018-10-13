@@ -4,20 +4,32 @@ function ViewModel() {
 
 	self.floors = ko.observableArray(allFloors)
 
-    self.items = ko.observableArray(
+    self.items = ko.observableArray([
+		[{"Name": 'Ryan', "Id": 'flash'},
+		{"Name": 'Ryan', "Id": 'flash'},
+		{"Name": 'Ryan', "Id": 'flash'},
+		{"Name": 'Ryan', "Id": 'flash'},
+		{"Name": 'Ryan', "Id": 'flash'}],
+
+		[{"Name": 'Ryan', "Id": 'flash'},
+		{"Name": 'Ryan', "Id": 'flash'},
+		{"Name": 'Ryan', "Id": 'flash'},
+		{"Name": 'Ryan', "Id": 'flash'},
+		{"Name": 'Ryan', "Id": 'flash'}],
+
 		[{"Name": 'Ryan', "Id": 'flash'},
 		{"Name": 'Ryan', "Id": 'flash'},
 		{"Name": 'Ryan', "Id": 'flash'},
 		{"Name": 'Ryan', "Id": 'flash'},
 		{"Name": 'Ryan', "Id": 'flash'}]
-	);
+	]);
     self.items_grouped = ko.computed(function(){
         var grouped = [];
         var itemlist = self.items();
-        for(var i = 0; i < itemlist.length; i+=5){
+        for(var i = 0; i < itemlist.length; i++){
             var row = [];
-            for(var j = 0; j < 5; ++j){
-                row.push(itemlist[i+j]);
+            for(var j = 0; j < itemlist[i].length; j++){
+                row.push(itemlist[i][j]);
 			}
 			grouped.push(row);
         }
