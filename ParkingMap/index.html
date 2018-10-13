@@ -33,19 +33,13 @@
 
 		<!-- Floorplan Component -->
 
-		<table id = "tbl" style="height: 350px; width: 600px; background-color: white" hidden >
-				<tbody data-bind="foreach: items_grouped">
-					<tr data-bind="foreach: $data">
-						<td data-bind="style: { backgroundColor: color }"></td>
-					</tr>
-				</tbody>
-			</table>
+		<img id="img" src=""/>
 		<br />
 		<br />
 
 	<!-- Floors Selection Component -->
 	<div class="floors-flexbox" data-bind="foreach: allFloors">
-		<button style="width: 300px" id="thisButton"+floor" class="btn btn-secondary-floors-flexitem" type="button" data-bind="click: function(data, event) {goToFloor(floor, available, data, event) }">
+		<button style="width: 300px" id="thisButton"+floor" class="btn btn-secondary-floors-flexitem" type="button" data-bind="click: function(data, event) {goToFloor(floor, available, imgSrc, data, event) }">
 			<div>Floor <span data-bind="text: floor"/></div>
 			<span data-bind="text: available"></span>/<span data-bind="text: capacity"></span>
 		</button>
@@ -57,8 +51,8 @@
 	<script type='text/javascript' src='parkings.js'></script>
 	<script type='text/javascript' src='viewModel.js'></script>
 	<script>
-		function goToFloor(floorNum, availableSpots) {
-			console.log("hellooo")
+		function goToFloor(floorNum, availableSpots,imgSrc) {
+			document.getElementById("img").setAttribute("src", imgSrc); 
 			document.getElementById("tbl").removeAttribute("hidden");
 			document.getElementById("levelNumber").innerHTML = "Level " + floorNum;
 			document.getElementById("availspots").innerHTML = availableSpots + " Available Spots";
