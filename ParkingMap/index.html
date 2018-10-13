@@ -1,14 +1,52 @@
 <html>
-<!-- Default Navigation Buttons Component -->
-<button>Back</button>
-<h1>Level 1</h1>
-<h2>200 Available Spots</h2>
+<head>
+	<!-- Bootstrap Scripts -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	    crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	    crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	    crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
 
-<!-- Floorplan Component -->
-<img src="../media/building1_floor1.jpg" />
-<br />
-<!-- Floors Selection Component -->
-<!-- for each floors -->
-<button>1</button>
+	<!-- Custom Stylesheet -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700" rel="stylesheet" />
+    <link href="parkingMap.css" rel="stylesheet" />
+</head>
+<body>
+	<!-- Navigation and Headings Component -->
+	<div class="row">
+		<div class="col-md-1">
+	    	<button class="btn btn-primary" type="button">
+	    		BACK
+	    	</button>
+	    </div>
+	    <div class="col-md-4 title">
+			<h1>Level 1</h1>
+		</div>
+	    <div class="col-md-4 title">
+			<h2>200 Available Spots</h2>
+		</div>
+	</div>
 
+	<!-- Floorplan Component -->
+	<img src="../media/building1_floor1.jpg" />
+	<br />
+	<br />
+
+	<!-- Floors Selection Component -->
+	<div class="floors-flexbox" data-bind="foreach: allFloors">
+		<div class="floors-flexitem">
+			<p>Floor: <span data-bind="text: floor"/></p>
+			<p>Capacity: <span data-bind="text: capacity"/></p>
+			<p>Available: <span data-bind="text: available"/></p>
+		</div>
+	</div>
+
+	<!-- Scripts -->
+	<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js'></script>
+	<script type='text/javascript' src='floors.js'></script>
+	<script type='text/javascript' src='viewModel.js'></script>
+</body>
 </html>	
