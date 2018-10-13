@@ -118,4 +118,7 @@ var parkingMap = generateBlankMap()
 parkingMap = addParkingLots(parkingMap)
 parkingMap = addWalls(parkingMap)
 
+var imageDir = "../media/"
+var imagePath = imageDir + "Level1.png"
+
 console.log(parkingMap)

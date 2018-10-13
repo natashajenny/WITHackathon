@@ -1,26 +1,26 @@
 var allFloors = [
 		{
 			"floor": 1,
-			"capacity": 50,
-			"available": 8,
-			"imgSrc": '../media/spin.gif'
+			"capacity": 24,
+			"available": 2,
+			"imgSrc": '../media/Level1.png'
 		},
 		{
 			"floor": 2,
-			"capacity": 49,
-			"available": 3,
-			"imgSrc": '../media/spin.gif'
+			"capacity": 24,
+			"available": 0,
+			"imgSrc": '../media/Level2.png'
 		},
 		{
 			"floor": 3,
-			"capacity": 55,
-			"available": 40,
-			"imgSrc": '../media/spin.gif'
+			"capacity": 24,
+			"available": 4,
+			"imgSrc": '../media/Level3.png'
 		},
 		{
 			"floor": 4,
-			"capacity": 100,
-			"available": 1,
-			"imgSrc": '../media/spin.gif'
+			"capacity": 24,
+			"available": 12,
+			"imgSrc": '../media/Level4.png'
 		}
 	]

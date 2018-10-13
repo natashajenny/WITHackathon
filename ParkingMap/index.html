@@ -33,14 +33,17 @@
 
 		<!-- Floorplan Component -->
 
-		<img  id="img" src=""/>
+		<img id="img" src="" style="height: 450px; width: 450px" hidden/>
 		<br />
 		<br />
 
 	<!-- Floors Selection Component -->
 	<div class="floors-flexbox" data-bind="foreach: allFloors">
-		<button style="width: 300px" id="thisButton"+floor" class="btn btn-secondary-floors-flexitem" type="button" data-bind="click: function(data, event) {goToFloor(floor, available, imgSrc, data, event) }">
-			<div>Floor <span data-bind="text: floor"/></div>
+		<button style="width: 300px" class="btn btn-secondary-floors-flexitem" type="button" data-bind="click: function(data, event) {goToFloor(floor, available, imgSrc, data, event) }, attr: {'id': 'thisButton' + floor}">
+			<div>
+				Floor 
+				<span data-bind="text: floor"/>
+			</div>
 			<span data-bind="text: available"></span>/<span data-bind="text: capacity"></span>
 		</button>
 	</div>
@@ -53,10 +56,10 @@
 	<script>
 		function goToFloor(floorNum, availableSpots,imgSrc) {
 			document.getElementById("img").setAttribute("src", imgSrc); 
-			document.getElementById("tbl").removeAttribute("hidden");
+			document.getElementById("img").removeAttribute("hidden");
 			document.getElementById("levelNumber").innerHTML = "Level " + floorNum;
 			document.getElementById("availspots").innerHTML = availableSpots + " Available Spots";
-			document.getElementById("thisButton"+floor).style.background="rgba(106,106,106,0.75)";
+			document.getElementById("thisButton"+floorNum).style.background="rgba(106,106,106,0.75)";
 		}
 	</script>
 </body>

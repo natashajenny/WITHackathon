@@ -20,14 +20,14 @@ function ViewModel() {
 	self.nextParkingText = "Scanned J3NNY. Allocating your space...";
 	
 	self.enterCar = function() {
-		if (self.nextParkingText === "Welcome! You've been allocated Level 1 R2.") {
-			self.imagePath('../media/map_dark.jpg');
+		if (self.nextParkingText === "Welcome! You've been allocated Level 1 Location 10.") {
+			self.imagePath('../media/Level1_allocated.png');
 		}
 		self.parkingText(self.nextParkingText);
-		self.nextParkingText = "Welcome! You've been allocated Level 1 R2.";
-	};
+		self.nextParkingText = "Welcome! You've been allocated Level 1 Location 10.";
+	}	
 
-	self.imagePath = ko.observable('../media/logo.png');
+	self.imagePath = ko.observable('../media/Level1.png');
 }
 
 ko.applyBindings(new ViewModel())
