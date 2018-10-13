@@ -16,17 +16,17 @@
 </head>
 <body>
 	<!-- Navigation and Headings Component -->
-	<nav class="navbar navbar-expand-lg navbar-light " style="color: white; background: linear-gradient(#2c3e50, #3498db);"
+	<nav data-bind="click: enterCar" class="navbar navbar-expand-lg navbar-light " style="color: white; background: linear-gradient(#2c3e50, #3498db);"
 	style="text-align: center;">
-	<button class="btn btn-primary" type="button" onclick="window.location.href='../Area/area.html'">
-		BACK
-	</button>
-	<a class="navbar-brand" style="text-align: center; margin: auto; font-family: 'Raleway', sans-serif; font-size: 35px">Macquarie Centre</a>
+	<!-- ko if: $data.parkingText() === "Scanned J3NNY. Allocating your space..." -->
+	<img style="height: 50px; width: 50px; " src="../media/spin.gif">
+	<!-- /ko -->
+	<a class="navbar-brand" data-bind="text: parkingText" style="text-align: center; margin: auto; font-family: 'Raleway', sans-serif; font-size: 35px">You have been allocated Level 1 Row 2</a>
 
 </nav>
+
 	<div class="content">
 		<!-- Floorplan Component -->
-
 		<table style="height: 350px; width: 1000px; background-color: white">
 				<tbody data-bind="foreach: items_grouped">
 					<tr data-bind="foreach: $data">
@@ -36,15 +36,6 @@
 			</table>
 		<br />
 		<br />
-
-		<!-- Floors Selection Component -->
-		<div class="floors-flexbox" data-bind="foreach: allFloors">
-			<div class="floors-flexitem">
-				<p>Floor: <span data-bind="text: floor"/></p>
-				<p>Capacity: <span data-bind="text: capacity"/></p>
-				<p>Available: <span data-bind="text: available"/></p>
-			</div>
-		</div>
 
 		<!-- Scripts -->
 		<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js'></script>
